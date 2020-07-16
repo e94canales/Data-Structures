@@ -100,6 +100,8 @@ class DoublyLinkedList:
             return
         elif node is self.tail:
             self.head.prev = node
+            self.tail = self.tail.prev
+            self.tail.next = None
             node.next = self.head
             self.head = node
         else:
@@ -119,6 +121,7 @@ class DoublyLinkedList:
             return
         elif node is self.head:
             self.head = self.head.next
+            self.head.prev = None
             self.tail.next = node
             node.prev = self.tail
             self.tail = node
