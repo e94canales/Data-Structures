@@ -69,7 +69,8 @@ class BSTNode:
         # if node has both self.left and self.right, run code for each side
         if self.left and self.right:
             self.left.for_each(fn)
-            return self.right.for_each(fn)
+            self.right.for_each(fn)
+            pass
 
         # if self.left/right is present, run the recursive code
         if self.left:
